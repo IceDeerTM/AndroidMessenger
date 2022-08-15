@@ -1,0 +1,2 @@
+rootProject.name = "AndroidMessenger"
+include ':app'

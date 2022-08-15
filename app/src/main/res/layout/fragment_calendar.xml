@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.calendar.CalendarFragment" android:background="@color/primaryDarkColor">
+    <CalendarView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content" android:id="@+id/calendarView"
+            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:background="@color/primaryColor"/>
+    <androidx.cardview.widget.CardView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp" android:id="@+id/cardViewAddEvent"
+            android:foreground="?selectableItemBackgroundBorderless"
+            app:cardBackgroundColor="@color/primaryColor" app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginBottom="8dp">
+        <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+        >
+
+            <TextView
+                    android:text="Добавить событие"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" android:id="@+id/textView9"
+                    app:layout_constraintTop_toTopOf="parent" app:layout_constraintBottom_toBottomOf="parent"
+                    android:textSize="20sp"
+                    app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toEndOf="@+id/imageView6"
+                    android:layout_marginStart="16dp" android:layout_marginEnd="16dp"/>
+            <ImageView
+                    android:src="@drawable/ic_today"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp" android:id="@+id/imageView6"
+                    app:layout_constraintTop_toTopOf="parent" app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent" android:layout_marginTop="8dp"
+                    android:layout_marginStart="8dp" android:layout_marginBottom="8dp"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+    <androidx.cardview.widget.CardView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/calendarView"
+            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="2dp" android:id="@+id/cardViewTimeStart"
+            app:cardBackgroundColor="@color/primaryColor" android:layout_marginTop="8dp">
+        <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+            <androidx.cardview.widget.CardView
+                    android:layout_width="250dp"
+                    android:layout_height="wrap_content" app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:foreground="?selectableItemBackgroundBorderless"
+                    android:id="@+id/cardViewPickTimeStart" app:cardBackgroundColor="@color/primaryLightColor"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginStart="8dp">
+                <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                    <ImageView
+                            android:src="@drawable/ic_timer"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp" android:id="@+id/imageViewStart"
+                            app:layout_constraintTop_toTopOf="parent" app:layout_constraintBottom_toBottomOf="parent"
+                            android:layout_marginTop="8dp" android:layout_marginBottom="8dp"
+                            app:layout_constraintEnd_toEndOf="parent"/>
+                    <TextView
+                            android:text="Выбрать время начала"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" android:id="@+id/textViewPickTimeStart"
+                            app:layout_constraintTop_toTopOf="parent" app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintBottom_toBottomOf="parent" android:layout_marginStart="16dp"/>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+            <TextView
+                    android:text="TextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" android:id="@+id/textViewTimeStart"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:textSize="20sp" android:layout_marginTop="20dp"
+                    app:layout_constraintStart_toEndOf="@+id/cardViewPickTimeStart" android:layout_marginStart="24dp"/>
+            <androidx.cardview.widget.CardView
+                    android:layout_width="250dp"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:id="@+id/cardViewPickTimeEnd"
+                    android:foreground="?selectableItemBackgroundBorderless"
+                    app:layout_constraintTop_toBottomOf="@+id/cardViewPickTimeStart" android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp" app:cardBackgroundColor="@color/primaryLightColor"
+                    android:layout_marginStart="8dp">
+                <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                    <ImageView
+                            android:src="@drawable/ic_timer"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp" android:id="@+id/imageViewEnd"
+                            app:layout_constraintTop_toTopOf="parent" app:layout_constraintBottom_toBottomOf="parent"
+                            android:layout_marginTop="8dp" android:layout_marginBottom="8dp"
+                            app:layout_constraintEnd_toEndOf="parent"/>
+                    <TextView
+                            android:text="Выбрать время окончания"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:layout_constraintTop_toTopOf="parent" app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintBottom_toBottomOf="parent" android:layout_marginStart="16dp"
+                            android:id="@+id/textViewPickTimeEnd"/>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+            <TextView
+                    android:text="TextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" android:id="@+id/textViewTimeEnd"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:layout_marginBottom="20dp"
+                    android:textSize="20sp" app:layout_constraintStart_toEndOf="@+id/cardViewPickTimeEnd"
+                    android:layout_marginStart="24dp"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+    <androidx.cardview.widget.CardView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/cardViewInformation" app:layout_constraintTop_toBottomOf="@+id/cardViewTimeStart"
+            android:layout_marginTop="8dp" app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" app:cardBackgroundColor="@color/primaryColor">
+        <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+            <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:inputType="textPersonName"
+                    android:ems="10"
+                    android:id="@+id/editTextTitle" app:layout_constraintTop_toTopOf="parent"
+                    android:layout_marginTop="8dp" app:layout_constraintStart_toStartOf="parent"
+                    android:layout_marginStart="8dp" android:textSize="14sp" android:hint="Название"/>
+            <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:inputType="textPersonName"
+                    android:ems="10"
+                    android:id="@+id/editTextDescription"
+                    app:layout_constraintTop_toBottomOf="@+id/editTextTitle" android:layout_marginTop="8dp"
+                    app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="8dp"
+                    app:layout_constraintBottom_toBottomOf="parent" android:layout_marginBottom="8dp"
+                    android:textSize="14sp" android:hint="Описание"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+</androidx.constraintlayout.widget.ConstraintLayout>

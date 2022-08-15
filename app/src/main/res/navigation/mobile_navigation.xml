@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:id="@+id/mobile_navigation"
+            app:startDestination="@+id/nav_home">
+
+    <fragment
+            android:id="@+id/nav_home"
+            android:name="com.deerdevelop.androidmessenger.ui.dialog_preview.DialogPreviewFragment"
+            android:label="@string/menu_home"
+            tools:layout="@layout/fragment_dialog_preview"/>
+    <fragment
+        android:id="@+id/nav_sessions"
+        android:name="com.deerdevelop.androidmessenger.ui.setting.sessions.SessionsFragment"
+        android:label="Пользовательские сессии"
+        tools:layout="@layout/fragment_sessions"/>
+
+    <fragment
+            android:id="@+id/nav_main_settings"
+            android:name="com.deerdevelop.androidmessenger.ui.setting.mainsetting.MainSettingsFragment"
+            android:label="Настройки"
+            tools:layout="@layout/fragment_main_settings">
+        <action android:id="@+id/action_nav_main_settings_to_nav_sessions" app:destination="@id/nav_sessions"
+                app:enterAnim="@anim/nav_default_enter_anim" app:exitAnim="@anim/nav_default_pop_exit_anim"/>
+    </fragment>
+
+    <fragment android:id="@+id/nav_search"
+              android:name="com.deerdevelop.androidmessenger.ui.search.SearchUserFragment"
+              android:label="Поиск"
+              tools:layout="@layout/fragment_search_user"/>
+
+</navigation>
